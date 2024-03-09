@@ -1,0 +1,14 @@
+{
+  "semi": false,
+  "printWidth": 120,
+  "offsetTernaryExpressions": true,
+  "arrayBracketSpacing": true,
+  "computedPropertySpacing": true,
+  "objectCurlySpacing": true,
+  "typeCurlySpacing": true,
+  "typeBracketSpacing": true,
+  "spaceInParens": false,
+  "trailingComma": "none",
+  "endOfLine": "auto",
+  "tabWidth": 4
+}

@@ -1,0 +1,26 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    ul {
+        display: flex;
+        justify-content: center;
+        li {
+            font-size: 16px;
+            padding: 0 15px;
+        }
+    }
+
+    span {
+        margin: 30px auto;
+        height: 1px;
+        width: 90%;
+        background-color: #000;
+    }
+
+    div {
+        display: flex;
+        justify-content: space-between;
+        width: 90%;
+        margin: 0 auto 70px auto;
+    }
+}

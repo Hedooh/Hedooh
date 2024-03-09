@@ -1,0 +1,47 @@
+.nav {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100px;
+
+    ul {
+        display: flex;
+
+        li {
+            padding: 0 35px 15px 35px;
+            font-weight: 500;
+            font-size: 19px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        li::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: #000;
+            transition: width 0.3s ease;
+        }
+
+        li:hover::before {
+            width: 100%;
+        }
+
+        li.active::before {
+            width: 100%;
+        }
+    }
+
+    button {
+        background-color: #000;
+        padding: 10px 20px;
+        color: #fff;
+        font-size: 19px;
+        border-radius: 5px;
+    }
+}
