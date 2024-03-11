@@ -37,12 +37,27 @@ export default function Product() {
                             onClick={() => setMainImage("/Product/product1.png")}
                         />
                         <img
-                            src="/Product/product2.png"
+                            src="/Product/product2.jpeg"
                             alt="Product Image"
                             onClick={() => setMainImage("/Product/product2.png")}
                         />
                         <img
-                            src="/Product/product3.png"
+                            src="/Product/product3.jpeg"
+                            alt="Product Image"
+                            onClick={() => setMainImage("/Product/product3.png")}
+                        />
+                        <img
+                            src="/Product/product4.jpeg"
+                            alt="Product Image"
+                            onClick={() => setMainImage("/Product/product3.png")}
+                        />
+                        <img
+                            src="/Product/product5.jpeg"
+                            alt="Product Image"
+                            onClick={() => setMainImage("/Product/product3.png")}
+                        />
+                        <img
+                            src="/Product/product6.jpeg"
                             alt="Product Image"
                             onClick={() => setMainImage("/Product/product3.png")}
                         />

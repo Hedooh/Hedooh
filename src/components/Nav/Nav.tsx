@@ -1,12 +1,20 @@
 "use client"
+import { useState } from "react"
 import styles from "./nav.module.scss"
 import Image from "next/image"
 import { usePathname, useSearchParams } from "next/navigation"
-
+import Hamburger from "hamburger-react"
+import { AnimatePresence, motion } from "framer-motion"
+import Link from "next/link"
 export default function Nav() {
     const router = usePathname()
     const searchParams = useSearchParams()
     const isPremium = searchParams.get("premium")
+    const [isOpen, setOpen] = useState(false)
+
+    const handleClose = () => {
+        setOpen(false)
+    }
     return (
         <nav
             className={styles.nav}
@@ -17,7 +25,7 @@ export default function Nav() {
             <Image
                 src={router === "/Hedooh" || isPremium === "true" ? "/Hedooh/logo.png" : "/logo.png"}
                 alt="logo"
-                width={200}
+                width={router === "/Hedooh" || isPremium === "true" ? 100 : 200}
                 height={40}
             />
             <ul className={router === "/Hedooh" || isPremium === "true" ? styles.hedooh : ""}>
@@ -33,6 +41,36 @@ export default function Nav() {
             >
                 Prendre rendez vous
             </button>
+            <div className={styles.burger}>
+                <Hamburger toggled={isOpen} toggle={setOpen} color="#000" />
+            </div>
+            <AnimatePresence>
+                {isOpen && (
+                    <motion.div
+                        initial={{ x: "-100%" }}
+                        animate={{ x: 0 }}
+                        exit={{ x: "-100%" }}
+                        whileTap={{
+                            zIndex: 1000
+                        }}
+                        className={styles.nav__mobile}
+                    >
+                        <div className={styles.layout}>
+                            <div className={styles.nav__mobile__content}>
+                                <ul>
+                                    <li onClick={handleClose}>
+                                        <Link href="/">Acceuil</Link>
+                                    </li>
+                                    <li onClick={handleClose}>Notre produit</li>
+                                    <li onClick={handleClose}>Configurer votre produit</li>
+                                    <li onClick={handleClose}>Hedooh Entertainment</li>
+                                </ul>
+                                <button>Prendre rendez vous</button>
+                            </div>
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </nav>
     )
 }

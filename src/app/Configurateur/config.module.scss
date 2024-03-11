@@ -97,6 +97,15 @@
         &__imgs {
             display: flex;
             align-items: center;
+            position: relative;
+
+            .preview {
+                position: absolute;
+                width: 305px;
+                height: 630px;
+                top: 0;
+                left: 0;
+            }
 
             img:first-child {
                 margin-right: 20px;
@@ -144,6 +153,7 @@
             }
 
             &__drop {
+                cursor: pointer;
                 margin-top: 20px;
                 display: flex;
                 flex-direction: column;
@@ -152,6 +162,12 @@
                 padding: 25px 50px;
                 margin-bottom: 30px;
                 width: 100%;
+
+                form {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
 
                 p:first-child {
                     font-size: 13px;
@@ -168,6 +184,7 @@
                 margin-top: 20px;
                 display: flex;
                 flex-direction: column;
+                width: 100%;
 
                 &__title {
                     display: flex;
