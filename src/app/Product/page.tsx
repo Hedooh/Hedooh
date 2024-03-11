@@ -19,9 +19,14 @@ export default function Product() {
             delay: 200
         })
         return (
-            <div ref={ref}>
-                <animated.span style={{ color: "#000" }}>{props.number.to((n) => n.toFixed(0))}</animated.span>
-                <span style={{ color: "#000" }}>{symbol}</span>
+            <div
+                ref={ref}
+                style={{
+                    backgroundColor: "unset !important"
+                }}
+            >
+                <animated.span style={{ color: "#fff" }}>{props.number.to((n) => n.toFixed(0))}</animated.span>
+                <span style={{ color: "#fff" }}>{symbol}</span>
             </div>
         )
     }
@@ -67,7 +72,7 @@ export default function Product() {
                 <div className={styles.product__main__info}>
                     <div className={styles.product__main__info__head}>
                         <img src="/Product/stars.png" alt="Stars" />
-                        <p>24 avis certifiés</p>
+                        <p>24 avis</p>
                         <span>Ta nouvelle experience digitale</span>
                     </div>
                     <div className={styles.product__main__info__title}>
@@ -139,11 +144,15 @@ export default function Product() {
             </div>
             <div className={styles.product__data}>
                 <div className={styles.product__data__item}>
-                    <h3>3500+</h3>
+                    <h3>
+                        <Number n={3500} symbol="+" />
+                    </h3>
                     <p>Abonnés sur instagram</p>
                 </div>
                 <div className={styles.product__data__item}>
-                    <h3>7000 €</h3>
+                    <h3>
+                        <Number n={7000} symbol="€" />
+                    </h3>
                     <p>Valeur cadeaux distribués</p>
                 </div>
                 <div className={styles.product__data__item}>

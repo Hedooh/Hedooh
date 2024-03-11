@@ -1,7 +1,38 @@
+"use client"
 import styles from "./hedooh.module.scss"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { useSpring, animated } from "@react-spring/web"
+import { useInView } from "react-intersection-observer"
+import React from "react"
 
 export default function Hedooh() {
+    function Number({ n, symbol }: any) {
+        const [ref, inView] = useInView({
+            threshold: 0
+        })
+        const props = useSpring({
+            from: { number: 0 },
+            to: { number: inView ? n : 0 },
+            config: { mass: 1, tension: 20, friction: 10 },
+            delay: 200
+        })
+        return (
+            <div
+                ref={ref}
+                style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    borderBottom: "none"
+                }}
+            >
+                <animated.span style={{ color: "#000", backgroundColor: "#fff !important" }}>
+                    {props.number.to((n) => n.toFixed(0))}
+                </animated.span>
+                <span style={{ color: "#000", backgroundColor: "#fff !important" }}>{symbol}</span>
+            </div>
+        )
+    }
+
     return (
         <div className={styles.home}>
             <div className={styles.home__bg}>
@@ -150,12 +181,16 @@ export default function Hedooh() {
                         </p>
                     </div>
                     <div className={styles.home__operations__container__item}>
-                        <h3>35+</h3>
+                        <h3>
+                            <Number n={35} symbol="+" />
+                        </h3>
                         <h4>Partenaires</h4>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, enim ad minim veniam, qui </p>
                     </div>
                     <div className={styles.home__operations__container__item}>
-                        <h3>15+</h3>
+                        <h3>
+                            <Number n={15} symbol="+" />
+                        </h3>
                         <h4>Club Hedooh</h4>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, enim ad minim veniam, qui</p>
                     </div>

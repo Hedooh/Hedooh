@@ -15,7 +15,7 @@ export default function Footer() {
             <span></span>
             <div>
                 <p>© 2024 Jeremy Lobruto. Tous les droits réservés.</p>
-                <p>Design By Julian Caille & developed by Matthieu Roman</p>
+                <p>Design By Julian Caille </p>
             </div>
         </footer>
     )

@@ -29,10 +29,16 @@ export default function Nav() {
                 height={40}
             />
             <ul className={router === "/Hedooh" || isPremium === "true" ? styles.hedooh : ""}>
-                <li className={router === "/" ? styles.active : ""}>Acceuil</li>
-                <li className={router === "/Product" ? styles.active : ""}>Notre produit</li>
-                <li className={router === "/Config" ? styles.active : ""}>Configurer votre produit</li>
-                <li className={router === "/Hedooh" ? styles.active : ""}>Hedooh Entertainment</li>
+                <li className={router === "/" ? styles.active : ""}>
+                    <Link href="/">Accueil</Link>
+                </li>
+                <li className={router === "/Product" ? styles.active : ""}>
+                    <Link href="/Product">Notre produit</Link>
+                </li>
+                <li className={router === "/Configurateur" ? styles.active : ""}></li>
+                <li className={router === "/Hedooh" ? styles.active : ""}>
+                    <Link href="/Hedooh">Hedooh Entertainment</Link>
+                </li>
             </ul>
             <button
                 style={{
@@ -59,11 +65,17 @@ export default function Nav() {
                             <div className={styles.nav__mobile__content}>
                                 <ul>
                                     <li onClick={handleClose}>
-                                        <Link href="/">Acceuil</Link>
+                                        <Link href="/">Accueil</Link>
                                     </li>
-                                    <li onClick={handleClose}>Notre produit</li>
-                                    <li onClick={handleClose}>Configurer votre produit</li>
-                                    <li onClick={handleClose}>Hedooh Entertainment</li>
+                                    <li onClick={handleClose}>
+                                        <Link href="/Product">Notre produit</Link>
+                                    </li>
+                                    <li onClick={handleClose}>
+                                        <Link href="/Configurateur">Configurer votre produit</Link>
+                                    </li>
+                                    <li onClick={handleClose}>
+                                        <Link href="/Hedooh">Hedooh Entertainment</Link>
+                                    </li>
                                 </ul>
                                 <button>Prendre rendez vous</button>
                             </div>

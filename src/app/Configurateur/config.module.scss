@@ -3,7 +3,6 @@
     background-image: url(/Config/bg.png);
     background-size: cover;
     background-repeat: repeat;
-    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -274,6 +273,72 @@
                 transition: all 0.3s ease;
                 margin-top: 20px;
                 width: 100%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .config {
+        &__choice {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            &__item:nth-child(2) {
+                margin-left: 0 !important;
+                margin-top: 20px;
+            }
+
+            &__item {
+                padding: 20px;
+                width: 80%;
+                height: unset;
+                h2 {
+                    font-size: 24px;
+                }
+
+                img {
+                    width: 50%;
+                }
+
+                p {
+                    font-size: 16px;
+                    margin-top: 20px;
+                }
+
+                button {
+                    font-size: 16px;
+                }
+            }
+        }
+
+        &__config {
+            flex-direction: column;
+
+            &__imgs {
+                padding: 20px;
+                img:first-child {
+                    margin-right: 20px;
+                    width: 60%;
+                }
+
+                div {
+                    width: 45%;
+                    img {
+                        width: 100%;
+                    }
+                    img:first-child {
+                        margin-bottom: 15px;
+                        width: 100%;
+                    }
+                }
+            }
+
+            &__panel {
+                margin-left: 0;
+                margin-bottom: 50px;
+                margin-top: 50px;
             }
         }
     }

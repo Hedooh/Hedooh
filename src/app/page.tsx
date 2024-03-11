@@ -21,7 +21,8 @@ export default function Home() {
                 ref={ref}
                 style={{
                     display: "flex",
-                    flexDirection: "row"
+                    flexDirection: "row",
+                    borderBottom: "none"
                 }}
             >
                 <animated.span style={{ color: "#000" }}>{props.number.to((n) => n.toFixed(0))}</animated.span>
