@@ -1,9 +1,35 @@
 "use client"
 import styles from "./Home.module.scss"
-import { Button } from "@/components/ui/button"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { useSpring, animated } from "@react-spring/web"
+import { useInView } from "react-intersection-observer"
+import React from "react"
 
 export default function Home() {
+    function Number({ n, symbol }: any) {
+        const [ref, inView] = useInView({
+            threshold: 0
+        })
+        const props = useSpring({
+            from: { number: 0 },
+            to: { number: inView ? n : 0 },
+            config: { mass: 1, tension: 20, friction: 10 },
+            delay: 200
+        })
+        return (
+            <div
+                ref={ref}
+                style={{
+                    display: "flex",
+                    flexDirection: "row"
+                }}
+            >
+                <animated.span style={{ color: "#000" }}>{props.number.to((n) => n.toFixed(0))}</animated.span>
+                <span style={{ color: "#000" }}>{symbol}</span>
+            </div>
+        )
+    }
+
     return (
         <div className={styles.home}>
             <div className={styles.home__bg}>
@@ -33,11 +59,15 @@ export default function Home() {
                     </div>
                     <div className={styles.home__data__container__right}>
                         <div>
-                            <h2>3500+</h2>
+                            <h2>
+                                <Number n={3500} symbol="+" />
+                            </h2>
                             <p>Abonnées sur instagram</p>
                         </div>
                         <div>
-                            <h2>7000€</h2>
+                            <h2>
+                                <Number n={7000} symbol="€" />
+                            </h2>
                             <p>Valeur cadeaux distribués</p>
                         </div>
                         <div>

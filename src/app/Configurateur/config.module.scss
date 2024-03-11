@@ -1,0 +1,263 @@
+.config {
+    padding-top: 150px;
+    background-image: url(/Config/bg.png);
+    background-size: cover;
+    background-repeat: repeat;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        backdrop-filter: blur(7px); /* Ajoute un flou */
+        background-color: rgba(0, 0, 0, 0.8); /* Ajoute un fond semi-transparent */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+    }
+
+    .dialog {
+        position: relative;
+        background-color: #8f8f8f75;
+        width: 80%;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        animation: fadeIn 0.3s ease; /* Animation d'ouverture */
+        z-index: 999999;
+    }
+
+    &__choice {
+        display: flex;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        height: fit-content;
+        position: relative;
+        width: 80%;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        animation: fadeIn 0.3s ease; /* Animation d'ouverture */
+        z-index: 999999;
+
+        &__item {
+            width: 700px;
+            height: 600px;
+            background-color: #fff;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            h2 {
+                font-size: 36px;
+                font-weight: 600;
+            }
+
+            p {
+                font-size: 20px;
+                font-weight: 400;
+                text-align: center;
+            }
+
+            button {
+                margin-top: 20px;
+                padding: 10px 20px;
+                font-size: 20px;
+                font-weight: 600;
+                border: none;
+                border-radius: 5px;
+                background-color: #000000;
+                color: #fff;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+        }
+
+        &__item:nth-child(2) {
+            margin-left: 20px;
+            button {
+                background-color: #bf9a4c;
+            }
+        }
+    }
+
+    &__config {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &__imgs {
+            display: flex;
+            align-items: center;
+
+            img:first-child {
+                margin-right: 20px;
+            }
+
+            div {
+                img:first-child {
+                    margin-bottom: 15px;
+                }
+            }
+        }
+
+        &__panel {
+            margin-left: 70px;
+            background-color: #fff;
+            border-radius: 15px;
+            padding: 35px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+
+            h3 {
+                font-size: 32px;
+                font-weight: 500;
+            }
+
+            .p {
+                font-size: 16px;
+                margin-top: 25px;
+                display: flex;
+                align-items: center;
+
+                span {
+                    background-color: #000;
+                    color: #fff;
+                    border-radius: 50px;
+                    width: 27px;
+                    height: 27px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-right: 10px;
+                }
+            }
+
+            &__drop {
+                margin-top: 20px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                border: dashed 2px #00000025;
+                padding: 25px 50px;
+                margin-bottom: 30px;
+                width: 100%;
+
+                p:first-child {
+                    font-size: 13px;
+                    font-weight: 600;
+                    margin-bottom: 10px;
+                }
+
+                p:last-child {
+                    font-size: 12px;
+                }
+            }
+
+            &__formulas {
+                margin-top: 20px;
+                display: flex;
+                flex-direction: column;
+
+                &__title {
+                    display: flex;
+                    align-items: center;
+                    width: 100%;
+
+                    span {
+                        height: 1px;
+                        width: 50%;
+                        background-color: #000;
+                    }
+
+                    h3 {
+                        font-size: 18px;
+                        font-weight: 600;
+                        text-align: center;
+                        margin: 0 15px;
+                        width: 100%;
+                    }
+                }
+
+                &__item {
+                    display: flex;
+                    flex-direction: column;
+                    cursor: pointer;
+                    margin-top: 25px;
+
+                    .input {
+                        margin-bottom: 15px;
+                        border: 1px solid #000;
+                        border-radius: 5px;
+                        padding: 10px;
+                        width: 100%;
+                        display: flex;
+                        align-items: flex-start;
+
+                        label {
+                            display: flex;
+                            width: 100%;
+                        }
+
+                        input {
+                            width: 16px;
+                            height: 16px;
+                            border-radius: 50%;
+                            background-color: black;
+                            accent-color: #232323;
+                        }
+
+                        .custom-checkbox-label {
+                            font-size: 16px;
+                            color: black;
+                        }
+
+                        div {
+                            cursor: pointer;
+                            margin-left: 10px;
+                            h4 {
+                                font-size: 16px;
+                                font-weight: 600;
+                            }
+
+                            p {
+                                font-size: 12px;
+                                margin-top: 5px;
+                            }
+
+                            h5 {
+                                margin-top: 5px;
+                                font-size: 14px;
+                                font-weight: 500;
+                            }
+                        }
+                    }
+                }
+            }
+
+            button {
+                padding: 10px 20px;
+                font-size: 20px;
+                font-weight: 400;
+                border: none;
+                border-radius: 5px;
+                background-color: #000000;
+                color: #fff;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                margin-top: 20px;
+                width: 100%;
+            }
+        }
+    }
+}

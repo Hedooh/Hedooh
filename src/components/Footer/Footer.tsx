@@ -1,7 +1,11 @@
+"use client"
 import styles from "./footer.module.scss"
+import { usePathname } from "next/navigation"
 
 export default function Footer() {
-    return (
+    const router = usePathname()
+
+    return router === "/Configurateur" ? null : (
         <footer className={styles.footer}>
             <ul>
                 <li>Accueil</li>
