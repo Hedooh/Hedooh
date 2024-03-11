@@ -4,6 +4,7 @@ import "../styles/tailwind.css"
 import Nav from "../components/Nav/Nav"
 import Footer from "../components/Footer/Footer"
 import { gothamFont } from "@/utils/gothamFont"
+import BreadCrumb from "@/components/BreadCrumb"
 
 export const metadata: Metadata = {
     title: "Hedooh",
@@ -24,13 +25,5 @@ export default function RootLayout({
                 <Footer />
             </body>
         </html>
-    )
-}
-
-function BreadCrumb() {
-    return (
-        <div className="breadCrumb">
-            <img src="/fiveStar.png" alt="logo" />
-        </div>
     )
 }

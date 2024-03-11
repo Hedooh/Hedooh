@@ -1,10 +1,15 @@
 .nav {
-    width: 90%;
+    width: 100%;
+    padding: 0 10%;
     margin: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: 100px;
+    position: fixed;
+    top: 50px;
+    background-color: #fff;
+    z-index: 10;
 
     ul {
         display: flex;
@@ -34,6 +39,12 @@
 
         li.active::before {
             width: 100%;
+        }
+    }
+
+    ul.hedooh {
+        li::before {
+            background-color: #bf9a4c;
         }
     }
 
